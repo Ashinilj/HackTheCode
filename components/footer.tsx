@@ -39,7 +39,7 @@ export function Footer() {
           <div className="space-y-4">
             <h3 className="text-md font-semibold">Get in Touch</h3>
             <ul className="space-y-2">
-              <li className="text-md text-muted-foreground">Email: whatthehack.official@gmail.com</li>
+              <li className="text-md text-muted-foreground">Email: whatthehack.hackathon@gmail.com</li>
               <li className="text-md text-muted-foreground">Chandigarh University, Mohali, Punjab 140413</li>
             </ul>
           </div>
