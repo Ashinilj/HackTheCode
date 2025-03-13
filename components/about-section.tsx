@@ -300,7 +300,7 @@ export function AboutSection() {
         >
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
             <Button
-              className="text-lg bg-gradient-to-r from-[#fc6b32] to-purple-900 text-white border border-black px-8 py-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 group relative overflow-hidden"
+              className="text-lg bg-gradient-to-r from-[#fc6b32] to-purple-900 text-white border  px-8 py-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 group relative overflow-hidden"
               onClick={() => console.log("Downloading guidelines...")}
             >
               <span className="relative z-10 flex items-center">
