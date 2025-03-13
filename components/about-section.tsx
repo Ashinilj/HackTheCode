@@ -25,7 +25,7 @@ export function AboutSection() {
           transition={{ duration: 0.8 }}
           className="text-5xl md:text-7xl font-bold mb-12 text-center text-white"
         >
-          About What The Hack
+          About This Hackathon
         </motion.h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
@@ -141,7 +141,7 @@ export function AboutSection() {
                             repeatDelay: 1,
                           }}
                         >
-                          🏢
+                          {/* 🏢 */}
                         </motion.span>
                       </h3>
                       <div className="h-1 w-20 bg-gradient-to-r from-purple-500 to-[#fc6b32] rounded-full mb-4"></div>
@@ -161,10 +161,10 @@ export function AboutSection() {
                         }}
                         transition={{ duration: 0.3 }}
                       >
-                        <p>
+                        {/* <p>
                           Join us at the state-of-the-art campus facilities equipped with high-speed internet, modern
                           workspaces, and all the amenities you&apos;ll need for a productive hackathon experience.
-                        </p>
+                        </p> */}
                       </motion.div>
                     </div>
                   </div>
@@ -250,7 +250,7 @@ export function AboutSection() {
                             repeatDelay: 1,
                           }}
                         >
-                          🚀
+                          {/* 🚀 */}
                         </motion.span>
                       </h3>
                       <div className="h-1 w-20 bg-gradient-to-r from-[#fc6b32] to-purple-500 rounded-full mb-4"></div>
@@ -270,10 +270,10 @@ export function AboutSection() {
                         }}
                         transition={{ duration: 0.3 }}
                       >
-                        <p>
+                        {/* <p>
                           A student-led organization dedicated to fostering innovation, creativity, and technological
                           advancement through collaborative events, workshops, and hackathons.
-                        </p>
+                        </p> */}
                       </motion.div>
                     </div>
                   </div>

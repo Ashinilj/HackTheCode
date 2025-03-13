@@ -2,13 +2,14 @@
 
 import { motion } from "framer-motion"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { useState } from "react"
 
 export function PrizePoolSection() {
-  return (
-    <section id="prize-pool" 
-    className="relative py-24 w-screen overflow-hidden bg-background">
-          <div className="absolute inset-0 w-full h-full bg-[radial-gradient(circle_at_center,rgba(124,58,237,0.3),transparent)]" />
+  const [hoveredCard, setHoveredCard] = useState<number | null>(null)
 
+  return (
+    <section id="prize-pool" className="relative py-24 w-screen overflow-hidden bg-background">
+      <div className="absolute inset-0 w-full h-full bg-[radial-gradient(circle_at_center,rgba(124,58,237,0.3),transparent)]" />
 
       <div className="container mx-auto px-4 relative z-10">
         <h2 className="text-5xl sm:text-7xl font-bold text-center mb-12">Prize Pool</h2>
@@ -19,9 +20,20 @@ export function PrizePoolSection() {
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
-              className="flex justify-center"
+              className="flex justify-center relative"
+              onMouseEnter={() => setHoveredCard(index)}
+              onMouseLeave={() => setHoveredCard(null)}
             >
-              <Card className="w-full sm:w-80 bg-gradient-to-br from-[#fc6b32]/15 to-purple-900/20 backdrop-blur-xl border border-white/10 rounded-xl shadow-xl p-4">
+              {/* Animated Border */}
+              <div className="absolute -inset-0.5 rounded-xl overflow-hidden z-0">
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-r from-purple-500 via-[#fc6b32] to-purple-500 blur-lg opacity-75"
+                  animate={hoveredCard === index ? { x: ["-100%", "100%"] } : {}}
+                  transition={hoveredCard === index ? { duration: 3, repeat: Infinity, ease: "linear" } : {}}
+                />
+              </div>
+
+              <Card className="relative w-full sm:w-80 bg-gradient-to-br from-[#fc6b32]/15 to-purple-900/20 backdrop-blur-xl border border-white/10 rounded-xl shadow-xl p-4 z-10">
                 <CardHeader>
                   <CardTitle className="text-xl sm:text-2xl font-bold text-center">{title}</CardTitle>
                 </CardHeader>
@@ -36,6 +48,14 @@ export function PrizePoolSection() {
           ))}
         </div>
       </div>
+
+      {/* Keyframe animations */}
+      <style jsx global>{`
+        @keyframes moving-border {
+          0% { transform: translateX(-100%); }
+          100% { transform: translateX(100%); }
+        }
+      `}</style>
     </section>
   )
 }
