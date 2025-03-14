@@ -11,16 +11,25 @@ export function TeamSection() {
 
   const teamMembers = [
     { name: "Ashish", role: "Secretary", image: "/images/Ashish.jpg" },
+    { name: "Sarthak", role: "Secretary", image: "/images/sarthak-cuec.jpg" },
+    { name: "Vaibhav Kushwaha", role: "Secretary", image: "/images/vaibhav.jpeg" },
+    { name: "Siddhant Tiwari", role: "Secretary", image: "/images/siddhant.jpg" },
     { name: "Rishi", role: "Jt. Secretary", image: "/images/Rishi.jpg" },
     { name: "Krish", role: "Jt. Secretary", image: "/images/Krish.jpg" },
     { name: "Harshita", role: "Jt. Secretary", image: "/images/Harshita.jpg" },
-    { name: "Ashini", role: "Design Lead", image: "/images/Ashini.jpeg" },
-    { name: "Priyanshu", role: "Technical Lead", image: "/images/Priyanshu.jpg" },
-    { name: "Utkarsh", role: "Event Management Lead", image: "/images/Utkarsh.jpg" },
-    { name: "Sarthak", role: "Marketing Lead", image: "/images/Sarthak.jpg" },
-    { name: "Adith", role: "Content Lead", image: "/images/Adith.jpg" },
-    { name: "Atish", role: "Media Lead", image: "/images/Atish.jpg" },
-    { name: "Harshit", role: "Finance Lead", image: "/images/Harshit.jpg" },
+    { name: "Aditya Khurana", role: "Jt. Secretary", image: "/images/aditya.jpg" },
+    { name: "Anant Inder Singh", role: "Jt. Secretary", image: "/images/anant.jpg" },
+    { name: "Rajeshwari Pradhan", role: "Jt. Secretary", image: "/images/rajeshwari.jpg" },
+    { name: "Ashini", role: "Core Team Lead", image: "/images/Ashini.jpeg" },
+    { name: "Utkarsh", role: "Core Team Lead", image: "/images/Utkarsh.jpg" },
+    { name: "Vivek", role: "Core Team Lead", image: "/images/vivek.jpg" },
+    { name: "Sujal Kumar", role: "Core Team Lead", image: "/images/sujal-kumar.jpg" },
+    { name: "Anirudh", role: "Core Team Lead", image: "/images/anirudh1.jpg" },
+    // { name: "Adith", role: "Core Team Lead", image: "/images/Adith.jpg" },
+    { name: "Atish", role: "Core Team Lead", image: "/images/Atish.jpg" },
+    { name: "Nabeel Akhther", role: "Core Team Lead", image: "/images/nabeel.jpg" },
+    { name: "Aditi", role: "Core Team Lead", image: "/images/aditi.jpg" },
+    { name: "Atharva Barge", role: "Core Team Lead", image: "/images/atharva.jpg" },
   ]
 
   return (
