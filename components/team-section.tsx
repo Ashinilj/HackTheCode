@@ -5,31 +5,15 @@ import { motion } from "framer-motion"
 
 export function TeamSection() {
   const facultyCoordinators = [
-    { name: " Prof. (Dr.) Sartajvir Singh", role: "Faculty Coordinator", image: "/images/sartajvir-sir.jpg" },
-    { name: "Prof. (Dr.) Abhishek Kumar Pandey", role: "Faculty Coordinator", image: "/images/abhishek-sir.jpeg" },
+    { name: " Prof. (Dr.) Virus", role: "Faculty Coordinator", image: "/images/virus.png" },
+    { name: "Prof. (Dr.) Chatur Ramalingham", role: "Faculty Coordinator", image: "/images/chatur.png" },
   ]
 
   const teamMembers = [
-    { name: "Ashish", role: "Secretary", image: "/images/Ashish.jpg" },
-    { name: "Sarthak", role: "Secretary", image: "/images/sarthak-cuec.jpg" },
-    { name: "Vaibhav Kushwaha", role: "Secretary", image: "/images/vaibhav.jpeg" },
-    { name: "Siddhant Tiwari", role: "Secretary", image: "/images/siddhant.jpg" },
-    { name: "Rishi", role: "Jt. Secretary", image: "/images/Rishi.jpg" },
-    { name: "Krish", role: "Jt. Secretary", image: "/images/Krish.jpg" },
-    { name: "Harshita", role: "Jt. Secretary", image: "/images/Harshita.jpg" },
-    { name: "Aditya Khurana", role: "Jt. Secretary", image: "/images/aditya.jpg" },
-    { name: "Anant Inder Singh", role: "Jt. Secretary", image: "/images/anant.jpg" },
-    { name: "Rajeshwari Pradhan", role: "Jt. Secretary", image: "/images/rajeshwari.jpg" },
-    { name: "Ashini", role: "Core Team Lead", image: "/images/Ashini.jpeg" },
-    { name: "Utkarsh", role: "Core Team Lead", image: "/images/Utkarsh.jpg" },
-    { name: "Vivek", role: "Core Team Lead", image: "/images/vivek.jpg" },
-    { name: "Sujal Kumar", role: "Core Team Lead", image: "/images/sujal-kumar.jpg" },
-    { name: "Anirudh", role: "Core Team Lead", image: "/images/anirudh1.jpg" },
-    // { name: "Adith", role: "Core Team Lead", image: "/images/Adith.jpg" },
-    { name: "Atish", role: "Core Team Lead", image: "/images/Atish.jpg" },
-    { name: "Nabeel Akhther", role: "Core Team Lead", image: "/images/nabeel.jpg" },
-    { name: "Aditi", role: "Core Team Lead", image: "/images/aditi.jpg" },
-    { name: "Atharva Barge", role: "Core Team Lead", image: "/images/atharva.jpg" },
+    { name: "Ashini L J", role: "Design Team", image: "/images/Ashini.jpeg" },
+    { name: "Ranchod Das", role: "Technical Team", image: "/images/rancho.png" },
+    { name: "Farhan Qureshi", role: "Camera Team", image: "/images/farhan.png" },
+    { name: "Raju Rastogi", role: "Management Team", image: "/images/raju.png" },
   ]
 
   return (

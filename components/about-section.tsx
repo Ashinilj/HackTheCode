@@ -41,7 +41,7 @@ export function AboutSection() {
                 <div className="absolute top-0 right-0 w-32 h-32 bg-purple-500/20 rounded-full filter blur-3xl -mr-16 -mt-16" />
                 <h3 className="text-3xl font-bold mb-6 text-white relative z-10">Our Mission</h3>
                 <p className="text-gray-200 relative z-10 text-lg leading-relaxed">
-                  What The Hack, organized by the Sci-Fi Innovation Club, is a platform for passionate individuals, tech
+                  Hack The Code, organized by the X-Factor Club, is a platform for passionate individuals, tech
                   enthusiasts, and innovators to solve real-world problems creatively. We aim to foster collaboration,
                   learning, and innovation through this immersive hackathon experience.
                 </p>
@@ -255,9 +255,9 @@ export function AboutSection() {
                       </h3>
                       <div className="h-1 w-20 bg-gradient-to-r from-[#fc6b32] to-purple-500 rounded-full mb-4"></div>
                       <p className="text-white text-xl leading-relaxed">
-                        Sci-Fi Innovation Club
+                        X-Factor Club
                         <br />
-                        <span className="italic">Fuel Your Innovation!!</span>
+                        <span className="italic">Conquer The Challenge!!</span>
                       </p>
 
                       {/* Reveal on hover */}

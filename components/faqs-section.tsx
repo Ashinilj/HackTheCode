@@ -6,9 +6,9 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 export function FAQsSection() {
   const faqs = [
     {
-      question: "What is the What The Hack?",
+      question: "What is the Hack The Code?",
       answer:
-        "What The Hack is a competitive event where participants collaborate to build innovative solutions to real-world problems. It brings together developers, designers, and thinkers to ideate, create, and present their projects.",
+        "Hack The Code is a competitive event where participants collaborate to build innovative solutions to real-world problems. It brings together developers, designers, and thinkers to ideate, create, and present their projects.",
     },
     {
       question: "Who can participate in the hackathon?",
@@ -18,7 +18,7 @@ export function FAQsSection() {
     {
       question: "Do I need a team to participate?",
       answer:
-        "Yes, you must be a part of a team to participate. Minimum of 2 and maximum of 5 participants are allowed in each team",
+        "Yes, you must be a part of a team to participate. Minimum of 3 and maximum of 5 participants are allowed in each team",
     },
     {
       question: "What are the judging criteria?",
@@ -38,7 +38,7 @@ export function FAQsSection() {
     {
       question: "How can I register for the hackathon?",
       answer:
-        "You can register by clicking on the register button in the home page. You will be redirected to devfolio for filling out the registration form. Keep an eye on the deadlines to ensure your participation.",
+        "You can register by clicking on the register button in the home page. You will be redirected for filling out the registration form. Keep an eye on the deadlines to ensure your participation.",
     },
   ];
 

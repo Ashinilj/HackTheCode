@@ -31,7 +31,7 @@ export function HeroSection() {
           {/* Image above the title */}
           <div className="flex justify-center mb-1">
             <Image
-              src="/images/sci-fi.png" // Replace with your actual image path
+              src="/images/x-factor-club.png" // Replace with your actual image path
               alt="Event Logo"
               width={350} // Adjust width as needed
               height={350} // Adjust height as needed
@@ -43,7 +43,7 @@ export function HeroSection() {
           <h1
             className={`text-5xl sm:text-6xl md:text-7xl lg:text-9xl font-extrabold tracking-tight text-white ${iceland.className}`}
           >
-            What The Hack??
+            Hack The Code
           </h1>
 
           <Image src="/images/24-hours.svg" alt="24 Hours Icon" width={400} height={400} className="mx-auto" />

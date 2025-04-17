@@ -6,9 +6,9 @@ export function Footer() {
       <div className="container mx-auto px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="space-y-4">
-            <h3 className="text-md font-semibold">What The Hack</h3>
+            <h3 className="text-md font-semibold">Hack The Code</h3>
             <p className="text-md text-muted-foreground">
-              Presented by Sci-Fi Innovation Club at Chandigarh University
+              Presented by X-Factor Club at Chandigarh University
             </p>
             {/* Google Maps Embed */}
             <div className="w-full h-30 rounded-lg overflow-hidden">
@@ -50,7 +50,7 @@ export function Footer() {
           <div className="space-y-4">
             <h3 className="text-md font-semibold">Get in Touch</h3>
             <ul className="space-y-2">
-              <li className="text-md text-muted-foreground">Email: whatthehack.hackathon@gmail.com</li>
+              <li className="text-md text-muted-foreground">Email: hackthecode@gmail.com</li>
               <li className="text-md text-muted-foreground">Chandigarh University, Mohali, Punjab 140413</li>
             </ul>
           </div>
@@ -63,7 +63,7 @@ export function Footer() {
                   target="_blank" 
                   className="text-md text-muted-foreground hover:text-primary"
                 >
-                  Instagram: @scifiinnovationclub
+                  Instagram: @xfactorclub
                 </Link>
               </li>
               <li>
@@ -72,14 +72,14 @@ export function Footer() {
                   target="_blank" 
                   className="text-md text-muted-foreground hover:text-primary"
                 >
-                  LinkedIn: scifiinnovationclub
+                  LinkedIn: xfactorclub
                 </Link>
               </li>
             </ul>
           </div>
         </div>
         <div className="mt-8 pt-8 border-t border-border/40 text-center">
-          <p>© Created by Sci-Fi Innovation Team 2025</p>
+          <p>© Created by Ashini L J</p>
         </div>
       </div>
     </footer>

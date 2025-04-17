@@ -12,15 +12,15 @@ type Theme = {
 };
 
 const themes: Theme[] = [
-  { name: "⁠Blockchain & Web3", description: "Explore the world of decentralized finance and digital currencies.", image: "/images/blockchain.svg" },
-  { name: "Artificial Intelligence & Machine Learning", description: "Harness the power of data and artificial intelligence for innovative solutions.", image: "/images/data-ai.svg" },
-  { name: "⁠Cybersecurity & Digital Privacy", description: "Engage in capture the flag challenges and enhance your cybersecurity skills.", image: "/images/cybersecurity.svg" },
-  { name: "⁠Internet of Things & Smart Tech", description: "Connect and manage devices in a smart ecosystem.", image: "/images/iot.svg" },
-  { name: "⁠Augmented & Virtual Reality", description: "Dive into augmented and virtual reality experiences.", image: "/images/ar-vr.svg" },
-  { name: "Web & Mobile App Development", description: "Build responsive web and mobile applications.", image: "/images/web-mobile.svg" },
-  { name: "Geo AI & Location Intelligence", description: "Apply artificial intelligence to geographic data for insightful analysis.", image: "/images/geo-ai.svg" },
-  { name: "FinTech & Digital Payments", description: "Innovate in financial technology and digital transactions.", image: "/images/fintech-logo.svg" },
-  { name: "Open Innovation", description: "Collaborate and innovate through open-source projects.", image: "/images/open-innovation.svg" }
+  { name: "Theme 1", description: "Explore the world of decentralized finance and digital currencies.", image: "/images/blockchain.svg" },
+  { name: "Theme 2", description: "Harness the power of data and artificial intelligence for innovative solutions.", image: "/images/data-ai.svg" },
+  { name: "Theme 3", description: "Engage in capture the flag challenges and enhance your cybersecurity skills.", image: "/images/cybersecurity.svg" },
+  { name: "Theme 4", description: "Connect and manage devices in a smart ecosystem.", image: "/images/iot.svg" },
+  { name: "Theme 5", description: "Dive into augmented and virtual reality experiences.", image: "/images/ar-vr.svg" },
+  { name: "Theme 6", description: "Build responsive web and mobile applications.", image: "/images/web-mobile.svg" },
+  { name: "Theme 7", description: "Apply artificial intelligence to geographic data for insightful analysis.", image: "/images/geo-ai.svg" },
+  { name: "Theme 8", description: "Innovate in financial technology and digital transactions.", image: "/images/fintech-logo.svg" },
+  { name: "Theme 9", description: "Collaborate and innovate through open-source projects.", image: "/images/open-innovation.svg" }
 ];
 
 export function ThemeSection() {

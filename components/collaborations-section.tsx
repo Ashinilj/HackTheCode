@@ -1,14 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import Image from "next/image";
+import { Card, CardContent, CardTitle } from "@/components/ui/card";
 import Link from "next/link";
 
 const collaborators = [
-  { name: "CypherLock Club", logo: "/images/cypher-lock-logo.svg", linkedin: "https://www.linkedin.com/company/cypherlock/" },
-  { name: "C Square Club", logo: "/images/csquare-logo.png", linkedin: "https://www.linkedin.com/company/csquare-club/" },
-  { name: "CU Engineering Community", logo: "/images/cuec.png", linkedin: "https://www.linkedin.com/in/engineering-community-cuec-698774320/" },
+  { name: "Club 1", linkedin: "https://www.linkedin.com/in/ashinilj/" },
+  { name: "Club 2", linkedin: "https://www.linkedin.com/in/ashinilj/" },
+  { name: "Club 3", linkedin: "https://www.linkedin.com/in/ashinilj/" },
 ];
 
 export function CollaborationsSection() {
@@ -26,18 +25,19 @@ export function CollaborationsSection() {
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
+              className="relative flex justify-center"
             >
-              <Link href={collaborator.linkedin} target="_blank" rel="noopener noreferrer" className="w-80">
-                <Card className="w-80 h-80 flex flex-col items-center justify-between bg-gradient-to-br from-[#fc6b32]/15 to-purple-900/20 backdrop-blur-xl border border-white/10 rounded-xl shadow-xl p-6 hover:scale-105 transition-transform">
-                  <CardHeader className="flex items-center justify-center">
-                    <Image
-                      src={collaborator.logo || "/placeholder.svg"}
-                      alt={collaborator.name}
-                      width={250}  // Increased width
-                      height={250} // Increased height
-                      className="h-32 w-auto object-contain" // Increased display size
-                    />
-                  </CardHeader>
+              {/* Moving Border */}
+              <div className="absolute -inset-0.5 rounded-xl overflow-hidden z-0">
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-r from-purple-500 via-[#fc6b32] to-purple-500 blur-lg opacity-75"
+                  animate={{ x: ["-100%", "100%"] }}
+                  transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+                />
+              </div>
+
+              <Link href={collaborator.linkedin} target="_blank" rel="noopener noreferrer" className="w-80 z-10">
+                <Card className="w-80 h-80 flex flex-col items-center justify-center bg-gradient-to-br from-[#fc6b32]/15 to-purple-900/20 backdrop-blur-xl border border-white/10 rounded-xl shadow-xl p-6 hover:scale-105 transition-transform">
                   <CardContent className="flex flex-col items-center">
                     <CardTitle className="text-xl sm:text-2xl font-bold text-center text-white leading-tight">
                       {collaborator.name}

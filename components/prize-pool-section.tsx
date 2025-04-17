@@ -2,11 +2,8 @@
 
 import { motion } from "framer-motion"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { useState } from "react"
 
 export function PrizePoolSection() {
-  const [hoveredCard, setHoveredCard] = useState<number | null>(null)
-
   return (
     <section id="prize-pool" className="relative py-24 w-screen overflow-hidden bg-background">
       <div className="absolute inset-0 w-full h-full bg-[radial-gradient(circle_at_center,rgba(124,58,237,0.3),transparent)]" />
@@ -21,15 +18,13 @@ export function PrizePoolSection() {
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
               className="flex justify-center relative"
-              onMouseEnter={() => setHoveredCard(index)}
-              onMouseLeave={() => setHoveredCard(null)}
             >
-              {/* Animated Border */}
+              {/* Animated Border - Always Active */}
               <div className="absolute -inset-0.5 rounded-xl overflow-hidden z-0">
                 <motion.div
                   className="absolute inset-0 bg-gradient-to-r from-purple-500 via-[#fc6b32] to-purple-500 blur-lg opacity-75"
-                  animate={hoveredCard === index ? { x: ["-100%", "100%"] } : {}}
-                  transition={hoveredCard === index ? { duration: 3, repeat: Infinity, ease: "linear" } : {}}
+                  animate={{ x: ["-100%", "100%"] }}
+                  transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
                 />
               </div>
 
@@ -48,14 +43,6 @@ export function PrizePoolSection() {
           ))}
         </div>
       </div>
-
-      {/* Keyframe animations */}
-      <style jsx global>{`
-        @keyframes moving-border {
-          0% { transform: translateX(-100%); }
-          100% { transform: translateX(100%); }
-        }
-      `}</style>
     </section>
   )
 }
