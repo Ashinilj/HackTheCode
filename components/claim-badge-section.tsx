@@ -8,7 +8,6 @@ import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { User, Users, Key } from "lucide-react"
 import html2canvas from "html2canvas"
-import Image from "next/image"
 
 export function ClaimBadgeSection() {
   const [participantInfo, setParticipantInfo] = useState({
