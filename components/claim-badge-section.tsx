@@ -163,7 +163,7 @@ export function ClaimBadgeSection() {
   {showBadge ? (
     <CardContent
       id="badge"
-      className="absolute inset-0 flex flex-col items-center justify-center space-y-4 p-6 z-10 bg-black bg-opacity-30"
+      className="absolute inset-0 flex flex-col items-center justify-center space-y-4 p-6 z-14 bg-black bg-opacity-0"
     >
       
       <div className="text-center">
@@ -171,7 +171,7 @@ export function ClaimBadgeSection() {
         <p className="text-lg">{participantInfo.teamName}</p>
       </div>
       
-      <p className="text-center text-sm">Awarded for successfully contributing to the event.</p>
+      <p className="text-center text-md">Awarded for successfully contributing to the event.</p>
     </CardContent>
   ) : (
     <div className="flex flex-col text-xl items-center justify-center h-full w-full">
