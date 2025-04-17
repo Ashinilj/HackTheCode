@@ -34,10 +34,10 @@ export function ClaimBadgeSection() {
     if (badge) {
       setTimeout(() => {
         html2canvas(badge, {
-          scale: 3, // Higher resolution
+          scale: 3,
           useCORS: true,
-          backgroundColor: null, // Preserves transparency
-          foreignObjectRendering: true, // Attempts to render gradients properly
+          backgroundColor: null,
+          foreignObjectRendering: true,
         }).then((canvas) => {
           const imageURL = canvas.toDataURL("image/png");
           const link = document.createElement("a");
@@ -149,34 +149,38 @@ export function ClaimBadgeSection() {
             transition={{ duration: 0.8 }}
             className="w-full md:w-1/2 max-w-md"
           >
-            <Card className="relative bg-gradient-to-br from-yellow-400 to-orange-500 text-white shadow-lg border-4 border-yellow-700 overflow-hidden">
-              {showBadge ? (
-                <CardContent id="badge" className="flex flex-col items-center space-y-4 p-6 relative z-10">
-                  <Image
-                    src="/images/badge1.png"
-                    alt="Event Logo"
-                    width={200}
-                    height={200}
-                    className="rounded-full mb-4"
-                  />
-                  <h3 className="text-2xl font-bold text-center">Hack The Code</h3>
-                  <div className="text-center">
-                    <p className="text-xl font-semibold">{participantInfo.participantName}</p>
-                    <p className="text-lg">{participantInfo.teamName}</p>
-                  </div>
-                  <p className="text-center font-medium">4th & 5th April 2025</p>
-                  <div className="bg-yellow-200 rounded-full px-4 py-2 text-yellow-800 font-bold">
-                    Official Participant
-                  </div>
-                  <p className="text-center text-sm">Awarded for successfully contributing to the event.</p>
-                </CardContent>
-              ) : (
-                <div className="flex flex-col text-xl items-center justify-center h-80">
-                  <span className="text-6xl font-bold">❓</span>
-                  <p>Your badge appears here</p>
-                </div>
-              )}
-            </Card>
+            <Card
+  className="relative text-white shadow-lg border-4 border-yellow-700 overflow-hidden"
+  style={{
+    backgroundImage: 'url("/images/badge-bg.png")', // replace with actual path
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
+    width: '450px',
+    height: '650px',
+  }}
+>
+  {showBadge ? (
+    <CardContent
+      id="badge"
+      className="absolute inset-0 flex flex-col items-center justify-center space-y-4 p-6 z-10 bg-black bg-opacity-30"
+    >
+      
+      <div className="text-center">
+        <p className="text-xl font-semibold">{participantInfo.participantName}</p>
+        <p className="text-lg">{participantInfo.teamName}</p>
+      </div>
+      
+      <p className="text-center text-sm">Awarded for successfully contributing to the event.</p>
+    </CardContent>
+  ) : (
+    <div className="flex flex-col text-xl items-center justify-center h-full w-full">
+      <span className="text-6xl font-bold">❓</span>
+      <p>Your badge appears here</p>
+    </div>
+  )}
+</Card>
+
 
             {showBadge && (
               <Button
@@ -192,5 +196,3 @@ export function ClaimBadgeSection() {
     </section>
   )
 }
-
-
