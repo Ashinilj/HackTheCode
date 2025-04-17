@@ -33,8 +33,8 @@ export function HeroSection() {
             <Image
               src="/images/x-factor-club.png" // Replace with your actual image path
               alt="Event Logo"
-              width={350} // Adjust width as needed
-              height={350} // Adjust height as needed
+              width={250} // Adjust width as needed
+              height={250} // Adjust height as needed
               className="object-contain"
             />
           </div>

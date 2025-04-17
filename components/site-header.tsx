@@ -43,11 +43,11 @@ export function SiteHeader() {
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-3">
           <Image
-            src="/images/htc1.png"
+            src="/images/htc3.png"
             alt="Wth Logo"
             width={68}
             height={68}
-            className="rounded-lg"
+            className="object-contain"
           />
         </Link>
 
