@@ -151,12 +151,20 @@ export function ClaimBadgeSection() {
             <Card
   className="relative text-white shadow-lg border-4 border-yellow-700 overflow-hidden"
   style={{
-    backgroundImage: 'url("/images/badge-bg.png")', // replace with actual path
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    backgroundRepeat: 'no-repeat',
-    width: '450px',
-    height: '650px',
+    backgroundColor: showBadge ? "transparent" : "#facc15", // yellow-400
+    ...(showBadge
+      ? {
+          backgroundImage: 'url("/images/badge-bg.png")',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          width: '450px',
+          height: '650px',
+        }
+      : {
+          width: '500px',
+          height: '500px',
+        }),
   }}
 >
   {showBadge ? (
@@ -164,16 +172,14 @@ export function ClaimBadgeSection() {
       id="badge"
       className="absolute inset-0 flex flex-col items-center justify-center space-y-4 p-6 z-14 bg-black bg-opacity-0"
     >
-      
       <div className="text-center">
         <p className="text-xl font-semibold">{participantInfo.participantName}</p>
         <p className="text-lg">{participantInfo.teamName}</p>
       </div>
-      
       <p className="text-center text-md">Awarded for successfully contributing to the event.</p>
     </CardContent>
   ) : (
-    <div className="flex flex-col text-xl items-center justify-center h-full w-full">
+    <div className="flex flex-col text-xl items-center justify-center h-full w-full text-white">
       <span className="text-6xl font-bold">❓</span>
       <p>Your badge appears here</p>
     </div>
