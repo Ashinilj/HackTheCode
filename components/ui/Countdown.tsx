@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 
 export default function Countdown() {
-    const date = new Date("2025-04-20T00:00:00+05:30"); 
+    const date = new Date("2025-05-20T00:00:00+05:30"); 
     const cur = new Date();
     const diff = date.getTime() - cur.getTime();
     const day = Math.floor(diff / (1000 * 60 * 60 * 24));
