@@ -1,7 +1,7 @@
 "use client"
 
 import type React from "react"
-import { useState } from "react"
+import { useState, useRef } from "react"
 import { motion } from "framer-motion"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -17,6 +17,7 @@ export function ClaimBadgeSection() {
   })
   const [showBadge, setShowBadge] = useState(false)
   const [messageVisible, setMessageVisible] = useState(false)
+  const badgeRef = useRef<HTMLDivElement>(null)
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setParticipantInfo({ ...participantInfo, [e.target.name]: e.target.value })
@@ -29,26 +30,50 @@ export function ClaimBadgeSection() {
   }
 
   const handleDownload = () => {
-    const badge = document.getElementById("badge");
-    if (badge) {
-      setTimeout(() => {
-        html2canvas(badge, {
-          scale: 3,
-          useCORS: true,
-          backgroundColor: null,
-          foreignObjectRendering: true,
-        }).then((canvas) => {
-          const imageURL = canvas.toDataURL("image/png");
-          const link = document.createElement("a");
-          link.href = imageURL;
-          link.download = "badge.png";
-          document.body.appendChild(link);
-          link.click();
-          document.body.removeChild(link);
-        });
-      }, 500);
-    }
-  };
+    if (!badgeRef.current) return
+    
+    // Create a temporary container for better canvas capture
+    const tempContainer = document.createElement('div')
+    tempContainer.style.position = 'absolute'
+    tempContainer.style.left = '-9999px'
+    tempContainer.style.top = '-9999px'
+    document.body.appendChild(tempContainer)
+    
+    // Clone the badge for capturing
+    const clonedBadge = badgeRef.current.cloneNode(true) as HTMLElement
+    clonedBadge.style.width = '450px'
+    clonedBadge.style.height = '650px'
+    clonedBadge.style.position = 'relative'
+    clonedBadge.style.backgroundImage = 'url("/images/badge-bg.png")'
+    clonedBadge.style.backgroundSize = 'cover'
+    clonedBadge.style.backgroundPosition = 'center'
+    clonedBadge.style.border = '4px solid #B45309' // yellow-700
+    clonedBadge.style.borderRadius = '8px'
+    clonedBadge.style.overflow = 'hidden'
+    
+    tempContainer.appendChild(clonedBadge)
+    
+    setTimeout(() => {
+      html2canvas(clonedBadge, {
+        scale: 3,
+        useCORS: true,
+        allowTaint: true,
+        backgroundColor: null,
+        logging: false,
+      }).then((canvas) => {
+        const imageURL = canvas.toDataURL("image/png")
+        const link = document.createElement("a")
+        link.href = imageURL
+        link.download = "badge.png"
+        document.body.appendChild(link)
+        link.click()
+        document.body.removeChild(link)
+        document.body.removeChild(tempContainer)
+      }).catch(err => {
+        console.error("Error generating badge:", err)
+      })
+    }, 300)
+  }
   
   return (
     <section id="claim-badge" className="relative flex items-center justify-center min-h-screen w-full bg-background">
@@ -148,52 +173,49 @@ export function ClaimBadgeSection() {
             transition={{ duration: 0.8 }}
             className="w-full md:w-1/2 max-w-md"
           >
-            <Card
-  className="relative text-white shadow-lg border-4 border-yellow-700 overflow-hidden"
-  style={{
-    backgroundColor: showBadge ? "transparent" : "#facc15", // yellow-400
-    ...(showBadge
-      ? {
-          backgroundImage: 'url("/images/badge-bg.png")',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          width: '450px',
-          height: '650px',
-        }
-      : {
-          width: '500px',
-          height: '500px',
-        }),
-  }}
->
-  {showBadge ? (
-    <CardContent
-      id="badge"
-      className="absolute inset-0 flex flex-col items-center justify-center space-y-4 p-6 z-14 bg-black bg-opacity-0"
-    >
-      <div className="text-center">
-        <p className="text-xl font-semibold">{participantInfo.participantName}</p>
-        <p className="text-lg">{participantInfo.teamName}</p>
-      </div>
-      <p className="text-center text-md">Awarded for successfully contributing to the event.</p>
-    </CardContent>
-  ) : (
-    <div className="flex flex-col text-xl items-center justify-center h-full w-full text-white">
-      <span className="text-6xl font-bold">❓</span>
-      <p>Your badge appears here</p>
-    </div>
-  )}
-</Card>
-
-
-            {showBadge && (
-              <Button
-                onClick={handleDownload}
-                className="mt-4 text-lg w-full bg-gradient-to-r from-[#fc6b32] to-purple-900 text-white hover:from-[#e65a28] hover:to-purple-800"
+            {showBadge ? (
+              <div className="relative">
+                <Card
+                  ref={badgeRef}
+                  className="relative text-white shadow-lg border-4 border-yellow-700 overflow-hidden"
+                  style={{
+                    backgroundImage: 'url("/images/badge-bg.png")',
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    backgroundRepeat: 'no-repeat',
+                    width: '450px',
+                    height: '650px',
+                  }}
+                >
+                  <CardContent className="absolute inset-0 flex flex-col items-center justify-center space-y-4 p-6 z-14 bg-black bg-opacity-0">
+                    <div className="text-center">
+                      <p className="text-xl font-semibold">{participantInfo.participantName}</p>
+                      <p className="text-lg">{participantInfo.teamName}</p>
+                    </div>
+                    <p className="text-center text-md">Awarded for successfully contributing to the event.</p>
+                  </CardContent>
+                </Card>
+                <Button
+                  onClick={handleDownload}
+                  className="mt-4 text-lg w-full bg-gradient-to-r from-[#fc6b32] to-purple-900 text-white hover:from-[#e65a28] hover:to-purple-800"
+                >
+                  Download Badge
+                </Button>
+              </div>
+            ) : (
+              <Card
+                className="relative text-white shadow-lg border-4 border-yellow-700 overflow-hidden flex items-center justify-center"
+                style={{
+                  backgroundColor: "#facc15",
+                  width: '500px',
+                  height: '500px',
+                }}
               >
-                Download Badge
-              </Button>
+                <div className="flex flex-col text-xl items-center justify-center h-full w-full text-white">
+                  <span className="text-6xl font-bold">❓</span>
+                  <p>Your badge appears here</p>
+                </div>
+              </Card>
             )}
           </motion.div>
         </div>

@@ -7,7 +7,7 @@ const iceland = Iceland({ subsets: ["latin"], weight: "400" }); // Initialize fo
 
 const data = [
   {
-    title: "March 1st",
+    title: "May 1st",
     content: (
       <div>
         <p className={`text-neutral-800 text-2xl dark:text-neutral-200 text-xs md:text-md xl:text-xl ${iceland.className} mb-8`}>
@@ -20,7 +20,7 @@ const data = [
             </CardHeader>
             <CardContent>
               <div className="bg-gradient-to-r from-[#fc6b32] to-purple-900 text-white hover:from-[#e65a28] hover:to-purple-800 text-white text-xl md:text-md text-center px-4 py-2 rounded-xl">
-                March 4th 2025
+                May 1st 2025
               </div>
             </CardContent>
           </Card>
@@ -30,7 +30,7 @@ const data = [
             </CardHeader>
             <CardContent>
               <div className="bg-gradient-to-r from-[#fc6b32] to-purple-900 text-white hover:from-[#e65a28] hover:to-purple-800 text-white text-xl md:text-md text-center px-4 py-2 rounded-xl">
-                March 20th 2025
+                May 20th 2025
               </div>
             </CardContent>
             </Card>
@@ -40,11 +40,11 @@ const data = [
   },
   {
     title:
-        "April 4th",
+        "May 25th",
     content: (
       <div>
         <p className={`text-neutral-800 dark:text-neutral-200 md:text-md xl:text-xl ${iceland.className} mb-8`}>
-          Morning Session- Lunch Break at 1 PM
+          Morning Session- Lunch Break at 2 PM
         </p>
         <div className="grid grid-cols-2 gap-4">
           <Card className="bg-[linear-gradient(to_bottom_right,rgba(99,33,130,0.2),rgba(234,98,62,0.2),rgba(147,77,118,0.2))] border border-black shadow-xl">
@@ -53,7 +53,7 @@ const data = [
             </CardHeader>
             <CardContent>
               <div className="bg-gradient-to-r from-[#fc6b32] to-purple-900 text-white hover:from-[#e65a28] hover:to-purple-800 text-white text-xl md:text-md text-center px-4 py-2 rounded-xl">
-                8 AM to 9 AM
+                9 AM to 10 AM
               </div>
             </CardContent>
           </Card>
@@ -63,7 +63,7 @@ const data = [
             </CardHeader>
             <CardContent>
               <div className="bg-gradient-to-r from-[#fc6b32] to-purple-900 text-white hover:from-[#e65a28] hover:to-purple-800 text-white text-xl md:text-md text-center px-4 py-2 rounded-xl">
-                9.30 AM to 10.30 AM
+                10.30 AM to 11.30 AM
               </div>
             </CardContent>
           </Card>
@@ -73,17 +73,17 @@ const data = [
             </CardHeader>
             <CardContent>
               <div className="bg-gradient-to-r from-[#fc6b32] to-purple-900 text-white hover:from-[#e65a28] hover:to-purple-800 text-white text-xl md:text-md text-center px-4 py-2 rounded-xl">
-                11 AM Onwards
+                12 PM Onwards
               </div>
             </CardContent>
           </Card>
           <Card className="bg-[linear-gradient(to_bottom_right,rgba(99,33,130,0.2),rgba(234,98,62,0.2),rgba(147,77,118,0.2))] border border-black shadow-xl">
             <CardHeader>
-              <CardTitle className="text-xl text-center">Experts Session</CardTitle>
+              <CardTitle className="text-xl text-center">Mentoring Round</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="bg-gradient-to-r from-[#fc6b32] to-purple-900 text-white hover:from-[#e65a28] hover:to-purple-800 text-white text-xl md:text-md text-center px-4 py-2 rounded-xl">
-                12 PM to 1 PM
+                3 PM to 4 PM
               </div>
             </CardContent>
           </Card>
@@ -93,7 +93,7 @@ const data = [
   },
   {
     title:
-        "April 4th",
+        "May 25th",
     content: (
       <div>
         <p className={`text-neutral-800 dark:text-neutral-200 md:text-md xl:text-xl ${iceland.className} mb-8`}>
@@ -106,7 +106,7 @@ const data = [
             </CardHeader>
             <CardContent>
               <div className="bg-gradient-to-r from-[#fc6b32] to-purple-900 text-white hover:from-[#e65a28] hover:to-purple-800 text-white text-xl md:text-md text-center px-4 py-2 rounded-xl">
-                2.30 PM Onwards
+                4.30 PM Onwards
               </div>
             </CardContent>
           </Card>
@@ -116,27 +116,27 @@ const data = [
             </CardHeader>
             <CardContent>
               <div className="bg-gradient-to-r from-[#fc6b32] to-purple-900 text-white hover:from-[#e65a28] hover:to-purple-800 text-white text-xl md:text-md text-center px-4 py-2 rounded-xl">
-                5 PM to 6 PM
+                5 PM to 7 PM
               </div>
             </CardContent>
           </Card>
           <Card className="bg-[linear-gradient(to_bottom_right,rgba(99,33,130,0.2),rgba(234,98,62,0.2),rgba(147,77,118,0.2))] border border-black shadow-xl">
             <CardHeader>
-              <CardTitle className="text-xl text-center">Fun Activites</CardTitle>
+              <CardTitle className="text-xl text-center">Dinner</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="bg-gradient-to-r from-[#fc6b32] to-purple-900 text-white hover:from-[#e65a28] hover:to-purple-800 text-white text-xl md:text-md text-center px-4 py-2 rounded-xl">
-                6.30 PM Onwards
+                7.30 PM Onwards
               </div>
             </CardContent>
           </Card>
           <Card className="bg-[linear-gradient(to_bottom_right,rgba(99,33,130,0.2),rgba(234,98,62,0.2),rgba(147,77,118,0.2))] border border-black shadow-xl">
             <CardHeader>
-              <CardTitle className="text-xl text-center">Dinner Break</CardTitle>
+              <CardTitle className="text-xl text-center">Games</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="bg-gradient-to-r from-[#fc6b32] to-purple-900 text-white hover:from-[#e65a28] hover:to-purple-800 text-white text-xl md:text-md text-center px-4 py-2 rounded-xl">
-                7.30 PM 
+                8.30 PM 
               </div>
             </CardContent>
           </Card>
@@ -146,7 +146,7 @@ const data = [
   },
   {
     title:
-        "April 5th",
+        "May 26th",
     content: (
       <div>
         <p className={`text-neutral-800 dark:text-neutral-200 text-xs md:text-md xl:text-xl ${iceland.className} mb-4`}>
@@ -155,27 +155,27 @@ const data = [
         <div className="grid grid-cols-2 gap-4">
             <Card className="bg-[linear-gradient(to_bottom_right,rgba(99,33,130,0.2),rgba(234,98,62,0.2),rgba(147,77,118,0.2))] border border-black shadow-xl">
             <CardHeader>
-              <CardTitle className="text-xl text-center">Prototyping & Progress</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="bg-gradient-to-r from-[#fc6b32] to-purple-900 text-white hover:from-[#e65a28] hover:to-purple-800 text-white text-xl md:text-md text-center px-4 py-2 rounded-xl">
-                12.30 AM Onwards
-              </div>
-            </CardContent>
-          </Card>
-          <Card className="bg-[linear-gradient(to_bottom_right,rgba(99,33,130,0.2),rgba(234,98,62,0.2),rgba(147,77,118,0.2))] border border-black shadow-xl">
-            <CardHeader>
               <CardTitle className="text-xl text-center">Breakfast</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="bg-gradient-to-r from-[#fc6b32] to-purple-900 text-white hover:from-[#e65a28] hover:to-purple-800 text-white text-xl md:text-md text-center px-4 py-2 rounded-xl">
-                8 Am to 9 AM 
+                8 Am to 9 AM
               </div>
             </CardContent>
           </Card>
           <Card className="bg-[linear-gradient(to_bottom_right,rgba(99,33,130,0.2),rgba(234,98,62,0.2),rgba(147,77,118,0.2))] border border-black shadow-xl">
             <CardHeader>
-              <CardTitle className="text-xl text-center">Final Presentation</CardTitle>
+              <CardTitle className="text-xl text-center">Prototype Presentation</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="bg-gradient-to-r from-[#fc6b32] to-purple-900 text-white hover:from-[#e65a28] hover:to-purple-800 text-white text-xl md:text-md text-center px-4 py-2 rounded-xl">
+              10 AM Onwards 
+              </div>
+            </CardContent>
+          </Card>
+          <Card className="bg-[linear-gradient(to_bottom_right,rgba(99,33,130,0.2),rgba(234,98,62,0.2),rgba(147,77,118,0.2))] border border-black shadow-xl">
+            <CardHeader>
+              <CardTitle className="text-xl text-center">Final Round</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="bg-gradient-to-r from-[#fc6b32] to-purple-900 text-white hover:from-[#e65a28] hover:to-purple-800 text-white text-xl md:text-md text-center px-4 py-2 rounded-xl">
@@ -199,7 +199,7 @@ const data = [
   },
   {
     title:
-        "April 5th",
+        "May 26th",
     content: (
       <div>
         <p className={`text-neutral-800 dark:text-neutral-200 text-xs md:text-md xl:text-xl ${iceland.className} mb-4`}>
