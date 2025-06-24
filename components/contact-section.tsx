@@ -15,6 +15,8 @@ import { Button } from "@/components/ui/button"
 
 export function ContactSection() {
   const [loading, setLoading] = useState(false)
+const [sent, setSent] = useState(false)
+
 
   const [formData, setFormData] = useState({
     name: "",
@@ -31,6 +33,7 @@ export function ContactSection() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setLoading(true)
+    setSent(false)
   
     try {
       const res = await fetch("/api/contact", {
@@ -39,21 +42,22 @@ export function ContactSection() {
         body: JSON.stringify(formData),
       })
   
-      const data = await res.json()
-  
       if (res.ok) {
-        alert("Message sent successfully!")
         setFormData({ name: "", email: "", message: "" })
+        setSent(true)
       } else {
-        alert(`Error: ${data.error || "Failed to send message"}`)
+        console.error("Submission failed")
       }
     } catch (error) {
-      console.error("Submit Error:", error)
-      alert("Something went wrong. Please try again.")
+      console.error("Error submitting form:", error)
     } finally {
       setLoading(false)
+  
+      // Optional: Reset "Sent" status after 3 seconds
+      setTimeout(() => setSent(false), 3000)
     }
-  }  
+  }
+  
   
   return (
     <section
@@ -135,9 +139,9 @@ export function ContactSection() {
                 <Button
   type="submit"
   className="w-full bg-gradient-to-r from-[#fc6b32] to-purple-900 text-white hover:from-[#e65a28] hover:to-purple-800 text-xl py-6"
-  disabled={loading}
+  disabled={loading || sent}
 >
-  {loading ? "Sending..." : "Send Message"}
+  {loading ? "Sending..." : sent ? "Sent ✅" : "Send Message"}
 </Button>
 
               </form>
