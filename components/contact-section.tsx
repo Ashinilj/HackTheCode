@@ -14,6 +14,8 @@ import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
 
 export function ContactSection() {
+  const [loading, setLoading] = useState(false)
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -26,12 +28,33 @@ export function ContactSection() {
     setFormData({ ...formData, [e.target.name]: e.target.value })
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    console.log("Form submitted:", formData)
-    setFormData({ name: "", email: "", message: "" })
-  }
-
+    setLoading(true)
+  
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      })
+  
+      const data = await res.json()
+  
+      if (res.ok) {
+        alert("Message sent successfully!")
+        setFormData({ name: "", email: "", message: "" })
+      } else {
+        alert(`Error: ${data.error || "Failed to send message"}`)
+      }
+    } catch (error) {
+      console.error("Submit Error:", error)
+      alert("Something went wrong. Please try again.")
+    } finally {
+      setLoading(false)
+    }
+  }  
+  
   return (
     <section
       id="contact-us"
@@ -110,14 +133,13 @@ export function ContactSection() {
                   />
                 </div>
                 <Button
-                  type="submit"
-                  className="w-full bg-gradient-to-r from-[#fc6b32] to-purple-900 text-white hover:from-[#e65a28] hover:to-purple-800 text-xl py-6"
-                  onClick={() => {
-                    console.log("Submit button clicked (no message sent)")
-                  }}
-                >
-                  Send Message
-                </Button>
+  type="submit"
+  className="w-full bg-gradient-to-r from-[#fc6b32] to-purple-900 text-white hover:from-[#e65a28] hover:to-purple-800 text-xl py-6"
+  disabled={loading}
+>
+  {loading ? "Sending..." : "Send Message"}
+</Button>
+
               </form>
             </CardContent>
           </Card>

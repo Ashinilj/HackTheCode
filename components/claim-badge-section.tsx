@@ -76,14 +76,14 @@ export function ClaimBadgeSection() {
   }
   
   return (
-    <section id="claim-badge" className="relative flex items-center justify-center min-h-screen w-full bg-background">
+    <section id="claim-badge" className="relative flex items-center justify-center min-h-screen w-full bg-background py-8 px-4 sm:py-12 sm:px-6">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(124,58,237,0.2),transparent)]" />
-      <div className="container mx-auto px-6 py-12 z-10">
+      <div className="container mx-auto z-10">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-7xl font-bold mb-12 text-center"
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-8 sm:mb-12 text-center"
         >
           Claim Your Badge
         </motion.h2>
@@ -96,12 +96,12 @@ export function ClaimBadgeSection() {
           >
             <Card className="bg-[linear-gradient(to_bottom_right,rgba(99,33,130,0.2),rgba(234,98,62,0.2),rgba(147,77,118,0.2))] text-white shadow-lg border border-black">
               <CardHeader>
-                <CardTitle className="text-2xl font-bold text-center">Participant Information</CardTitle>
+                <CardTitle className="text-xl sm:text-2xl font-bold text-center">Participant Information</CardTitle>
               </CardHeader>
               <CardContent>
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
                   <div className="space-y-2">
-                    <label htmlFor="participantName" className="text-lg font-medium">
+                    <label htmlFor="participantName" className="text-base sm:text-lg font-medium">
                       Participant Name
                     </label>
                     <div className="relative">
@@ -111,14 +111,14 @@ export function ClaimBadgeSection() {
                         name="participantName"
                         value={participantInfo.participantName}
                         onChange={handleChange}
-                        className="pl-10 !text-lg !h-[56px] !py-3 !leading-relaxed bg-white text-black border border-black"
+                        className="pl-10 !text-base sm:!text-lg !h-12 sm:!h-[56px] !py-2 sm:!py-3 !leading-relaxed bg-white text-black border border-black"
                         placeholder="Enter your name"
                         required
                       />
                     </div>
                   </div>
                   <div className="space-y-2">
-                    <label htmlFor="teamName" className="text-lg font-medium">
+                    <label htmlFor="teamName" className="text-base sm:text-lg font-medium">
                       Team Name
                     </label>
                     <div className="relative">
@@ -128,14 +128,14 @@ export function ClaimBadgeSection() {
                         name="teamName"
                         value={participantInfo.teamName}
                         onChange={handleChange}
-                        className="pl-10 !text-lg !h-[56px] !py-3 !leading-relaxed bg-white text-black border border-black"
+                        className="pl-10 !text-base sm:!text-lg !h-12 sm:!h-[56px] !py-2 sm:!py-3 !leading-relaxed bg-white text-black border border-black"
                         placeholder="Enter team name"
                         required
                       />
                     </div>
                   </div>
                   <div className="space-y-2">
-                    <label htmlFor="teamCode" className="text-lg font-medium">
+                    <label htmlFor="teamCode" className="text-base sm:text-lg font-medium">
                       Team Code
                     </label>
                     <div className="relative">
@@ -145,7 +145,7 @@ export function ClaimBadgeSection() {
                         name="teamCode"
                         value={participantInfo.teamCode}
                         onChange={handleChange}
-                        className="pl-10 !text-lg !h-[56px] !py-3 !leading-relaxed bg-white text-black border border-black"
+                        className="pl-10 !text-base sm:!text-lg !h-12 sm:!h-[56px] !py-2 sm:!py-3 !leading-relaxed bg-white text-black border border-black"
                         placeholder="Enter team code"
                         required
                       />
@@ -153,12 +153,12 @@ export function ClaimBadgeSection() {
                   </div>
                   <Button
                     type="submit"
-                    className="w-full text-lg bg-gradient-to-r from-[#fc6b32] to-purple-900 text-white hover:from-[#e65a28] hover:to-purple-800 border border-black"
+                    className="w-full text-base sm:text-lg bg-gradient-to-r from-[#fc6b32] to-purple-900 text-white hover:from-[#e65a28] hover:to-purple-800 border border-black"
                   >
                     Claim Your Badge
                   </Button>
                   {messageVisible && (
-                    <p className="text-center text-sm mt-2 text-gray-200">
+                    <p className="text-center text-xs sm:text-sm mt-2 text-gray-200">
                       Share your badge on LinkedIn and tag us!
                     </p>
                   )}
@@ -174,7 +174,7 @@ export function ClaimBadgeSection() {
             className="w-full md:w-1/2 max-w-md"
           >
             {showBadge ? (
-              <div className="relative">
+              <div className="relative flex flex-col items-center">
                 <Card
                   ref={badgeRef}
                   className="relative text-white shadow-lg border-4 border-yellow-700 overflow-hidden"
@@ -183,39 +183,45 @@ export function ClaimBadgeSection() {
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                     backgroundRepeat: 'no-repeat',
-                    width: '450px',
-                    height: '650px',
+                    width: '100%',
+                    maxWidth: '450px',
+                    height: 'auto',
+                    aspectRatio: '0.69',  // Approximates 450px / 650px ratio
                   }}
                 >
-                  <CardContent className="absolute inset-0 flex flex-col items-center justify-center space-y-4 p-6 z-14 bg-black bg-opacity-0">
+                  <CardContent className="absolute inset-0 flex flex-col items-center justify-center space-y-4 p-4 sm:p-6 z-14 bg-black bg-opacity-0">
                     <div className="text-center">
-                      <p className="text-xl font-semibold">{participantInfo.participantName}</p>
-                      <p className="text-lg">{participantInfo.teamName}</p>
+                      <p className="text-lg sm:text-xl font-semibold">{participantInfo.participantName}</p>
+                      <p className="text-base sm:text-lg">{participantInfo.teamName}</p>
                     </div>
-                    <p className="text-center text-md">Awarded for successfully contributing to the event.</p>
+                    <p className="text-center text-sm sm:text-md">Awarded for successfully contributing to the event.</p>
                   </CardContent>
                 </Card>
                 <Button
                   onClick={handleDownload}
-                  className="mt-4 text-lg w-full bg-gradient-to-r from-[#fc6b32] to-purple-900 text-white hover:from-[#e65a28] hover:to-purple-800"
+                  className="mt-4 text-base sm:text-lg w-full max-w-[450px] bg-gradient-to-r from-[#fc6b32] to-purple-900 text-white hover:from-[#e65a28] hover:to-purple-800"
                 >
                   Download Badge
                 </Button>
               </div>
             ) : (
-              <Card
-                className="relative text-white shadow-lg border-4 border-yellow-700 overflow-hidden flex items-center justify-center"
-                style={{
-                  backgroundColor: "#facc15",
-                  width: '500px',
-                  height: '500px',
-                }}
-              >
-                <div className="flex flex-col text-xl items-center justify-center h-full w-full text-white">
-                  <span className="text-6xl font-bold">❓</span>
-                  <p>Your badge appears here</p>
-                </div>
-              </Card>
+              <div className="flex justify-center w-full">
+                <Card
+                  className="relative text-white shadow-lg border-4 border-yellow-700 overflow-hidden flex items-center justify-center"
+                  style={{
+                    backgroundColor: "#facc15",
+                    width: '100%',
+                    maxWidth: '500px',
+                    height: 'auto',
+                    aspectRatio: '1', // Maintains square aspect ratio
+                  }}
+                >
+                  <div className="flex flex-col text-lg sm:text-xl items-center justify-center h-full w-full text-white p-4">
+                    <span className="text-5xl sm:text-6xl font-bold">❓</span>
+                    <p>Your badge appears here</p>
+                  </div>
+                </Card>
+              </div>
             )}
           </motion.div>
         </div>
